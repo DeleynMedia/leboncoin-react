@@ -13,6 +13,16 @@ textarea {
   margin-bottom: 30px;
 }
 
+.form-login {
+  width: 400px;
+  padding: 20px;
+}
+
+.form-login input,
+textarea {
+  margin-bottom: 30px;
+}
+
 .nav-list {
   list-style: none;
   display: flex;
