@@ -76,7 +76,7 @@ class SignUp extends React.Component {
           value={this.state.username}
           onChange={this.handleChange}
         />
-        <input type="submit" value="Valider" />
+        <input className="button-blue" type="submit" value="Valider" />
       </form>
     );
   }

@@ -42,7 +42,7 @@ class LogIn extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.onSubmit} className="form form-log-in">
+      <form onSubmit={this.onSubmit} className="form form-login">
         <label htmlFor="email">Email</label>
         <input
           id="email"
@@ -60,7 +60,7 @@ class LogIn extends React.Component {
           onChange={this.handleChange}
         />
 
-        <input type="submit" value="Valider" />
+        <input className="button-blue" type="submit" value="Valider" />
       </form>
     );
   }

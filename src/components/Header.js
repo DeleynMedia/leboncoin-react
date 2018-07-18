@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink, withRouter } from "react-router-dom";
+import Logo from "./Logo.js";
 
 class Header extends React.Component {
   onLogOut = event => {
@@ -28,7 +29,7 @@ class Header extends React.Component {
           <NavLink to="/sign_up">Créer un compte</NavLink>
         </li>
         <li>
-          <NavLink to="/log_in">Se connecter</NavLink>)
+          <NavLink to="/log_in">Se connecter</NavLink>
         </li>
       </React.Fragment>
     );
@@ -37,10 +38,16 @@ class Header extends React.Component {
   render() {
     return (
       <header>
-        <h1>leboncoin</h1>
         <ul className="nav-list">
           <li>
-            <NavLink to="/">Home</NavLink>
+            {" "}
+            <Logo url="/Logo_leboncoin.png" />
+          </li>
+          <li>
+            <NavLink to="/publish">DEPOSER UNE ANNONCE</NavLink>
+          </li>
+          <li>
+            <NavLink to="/">OFFRES</NavLink>
           </li>
           {this.renderNav()}
         </ul>

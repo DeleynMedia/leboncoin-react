@@ -7,6 +7,7 @@ import SignUp from "./containers/SignUp";
 import LogIn from "./containers/LogIn";
 import Profile from "./containers/Profile";
 import Offer from "./containers/Offer";
+import Publish from "./containers/Publish";
 import Header from "./components/Header";
 
 class App extends Component {
@@ -68,6 +69,10 @@ class App extends Component {
           <Route
             path="/offer/:id"
             render={props => <Offer {...props} user={user} />}
+          />
+          <Route
+            path="/publish"
+            render={props => <Publish {...props} user={user} />}
           />
         </React.Fragment>
       </Router>

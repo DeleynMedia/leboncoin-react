@@ -18,6 +18,12 @@ textarea {
   padding: 20px;
 }
 
+.button-blue {
+  background-color: #4c94ef;
+  color: white;
+  border-radius: 5px;
+}
+
 .form-login input,
 textarea {
   margin-bottom: 30px;
@@ -27,10 +33,18 @@ textarea {
   list-style: none;
   display: flex;
   flex-direction: row;
+  background-color: #f56b2a;
   margin: 0;
   padding: 0;
+  height: 50px;
+  color: white;
 }
 
 .nav-list > li {
   padding-right: 10px;
+  color: white;
+}
+
+.App-logo {
+  height: 50px;
 }
