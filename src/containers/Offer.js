@@ -14,14 +14,20 @@ class Offer extends React.Component {
         <React.Fragment>
           <div>
             <span className="detail-title">{this.state.offer.title}</span>
+            <br />
+            <br />
             <p className="detail-description">{this.state.offer.description}</p>
             <span className="detail-price">{this.state.offer.price}</span>
-            <span className="detail-userbname">
+            <br />
+            <span className="detail-username">
               {this.state.offer.creator.account.username}
             </span>
+            <br />
             <span className="detail-phone">
               {this.state.offer.creator.account.number || "pas de numéro"}
             </span>
+            <br />
+            <span className="detail-created">{this.state.offer.created}</span>
           </div>
         </React.Fragment>
       );

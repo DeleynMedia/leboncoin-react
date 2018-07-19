@@ -53,6 +53,15 @@ class Home extends React.Component {
             <div>Liste des annonces</div>
             <ul className="list-offers">{offers}</ul>
           </div>
+          <div>
+            <button
+              onClick={this.props.onSearch}
+              value="skip"
+              className="button-blue"
+            >
+              Page suivante{" "}
+            </button>
+          </div>
         </React.Fragment>
       );
     }

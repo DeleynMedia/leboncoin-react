@@ -88,6 +88,19 @@ class Search extends React.Component {
                   value={this.state.priceMax}
                   onChange={this.handleChange}
                 />
+
+                <select
+                  id="sort"
+                  name="sort"
+                  type="text"
+                  value={this.state.sort}
+                  onChange={this.handleChange}
+                >
+                  <option value="price-desc">Tri : prix décroissant</option>
+                  <option value="price-asc">Tri : prix croissant</option>
+                  <option value="date-desc">Tri : plus récentes</option>
+                  <option value="date-asc">Tri : plus anciennes</option>
+                </select>
               </form>
             </ul>
             <hr />
