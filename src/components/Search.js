@@ -2,54 +2,19 @@ import React from "react";
 
 /* import { NavLink, withRouter } from "react-router-dom"; */
 
-const queryString = require("query-string");
-
 class Search extends React.Component {
-  state = {
-    query: {
-      title: "",
-      priceMin: 0,
-      priceMax: null,
-      sort: "",
-      skip: 0,
-      limit: 25
-    }
-  };
-
-  handleChange = event => {
-    const target = event.target;
-    const name = target.name;
-    const value = target.type === "checkbox" ? target.checked : target.value;
-
-    const newState = { ...this.state };
-    newState.query[name] = value;
-    /* console.log(newState); */
-    this.setState(newState);
-  };
-
   onSearch = event => {
-    const queryUrl = queryString.stringify(this.state.query);
-    this.props.onSearch(queryUrl);
+    this.props.onSearch();
     event.preventDefault();
-    /* axios
-      .get("https://leboncoin-api.herokuapp.com/api/offer?" + queryUrl)
-      .then(response => {
-        
-        this.setState({
-          isLoading: false,
-          title: response.data.title,
-          priceMax: response.data.priceMax,
-          priceMin: response.data.priceMin,
-          sort: response.data.sort
-        });
-      })
-      .catch(error => {
-        console.log(error);
-      }); */
+
+    /*     this.setState({
+      queryUrl : queryUrl 
+    });
+ */
   };
 
   render() {
-    if (!this.state.isLoading) {
+    if (!this.props.isLoading) {
       return (
         <React.Fragment>
           <h2>Recherche</h2>
@@ -61,8 +26,8 @@ class Search extends React.Component {
                   id="title"
                   name="title"
                   type="text"
-                  value={this.state.title}
-                  onChange={this.handleChange}
+                  value={this.props.title}
+                  onChange={this.props.handleChange}
                 />
                 <input
                   className="button-blue"
@@ -77,24 +42,24 @@ class Search extends React.Component {
                   id="priceMin"
                   name="priceMin"
                   type="number"
-                  value={this.state.priceMin}
-                  onChange={this.handleChange}
+                  value={this.props.priceMin}
+                  onChange={this.props.handleChange}
                 />
                 <label htmlFor="price-max">Prix max</label>
                 <input
                   id="priceMax"
                   name="priceMax"
                   type="number"
-                  value={this.state.priceMax}
-                  onChange={this.handleChange}
+                  value={this.props.priceMax}
+                  onChange={this.props.handleChange}
                 />
 
                 <select
                   id="sort"
                   name="sort"
                   type="text"
-                  value={this.state.sort}
-                  onChange={this.handleChange}
+                  value={this.props.sort}
+                  onChange={this.props.handleChange}
                 >
                   <option value="price-desc">Tri : prix décroissant</option>
                   <option value="price-asc">Tri : prix croissant</option>
