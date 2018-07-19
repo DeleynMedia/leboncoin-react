@@ -8,6 +8,7 @@ class Header extends React.Component {
     this.props.history.push("/");
     event.preventDefault();
   };
+
   renderNav() {
     if (this.props.user._id) {
       return (

@@ -40,11 +40,12 @@ class App extends Component {
   };
 
   render() {
-    const { user } = this.state;
+    const user = this.state.user;
     return (
       <Router>
         <React.Fragment>
           <Header user={user} logOut={this.logOut} />
+
           <Route
             exact
             path="/"

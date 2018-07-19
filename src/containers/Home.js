@@ -1,19 +1,25 @@
 import React from "react";
 import axios from "axios";
 import Item from "./Item";
+import Search from "../components/Search";
 
 class Home extends React.Component {
   state = {
-    isLoading: true,
+    isLoading: false,
     offers: []
   };
 
   /* FONCTION POUR RECUPERER LES DATAS DES ANNONCES  */
-  getInfos = () => {
+  getInfos = params => {
+    if (params) {
+      params = "?" + params;
+      /* console.log("https://leboncoin-api.herokuapp.com/api/offer" + params); */
+    } else {
+      params = "";
+    }
     axios
-      .get("https://leboncoin-api.herokuapp.com/api/offer")
+      .get("https://leboncoin-api.herokuapp.com/api/offer" + params)
       .then(response => {
-        /*         console.log(response); */
         this.setState({
           isLoading: false,
           offers: response.data
@@ -40,8 +46,13 @@ class Home extends React.Component {
 
       return (
         <React.Fragment>
-          <h2>Liste des annonces</h2>
-          <ul className="list-offers">{offers}</ul>
+          <div>
+            <Search onSearch={this.getInfos} />
+          </div>
+          <div>
+            <div>Liste des annonces</div>
+            <ul className="list-offers">{offers}</ul>
+          </div>
         </React.Fragment>
       );
     }

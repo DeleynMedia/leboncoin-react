@@ -13,7 +13,6 @@ class Offer extends React.Component {
       return (
         <React.Fragment>
           <div>
-            {/*           <span>offer : {this.props.match.params.id}</span> */}
             <span className="detail-title">{this.state.offer.title}</span>
             <p className="detail-description">{this.state.offer.description}</p>
             <span className="detail-price">{this.state.offer.price}</span>

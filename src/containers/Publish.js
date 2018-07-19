@@ -44,7 +44,7 @@ class Publish extends React.Component {
     return (
       <React.Fragment>
         <h2>Votre annonce</h2>
-        <ul>
+        <ul className="publish-offer">
           <form onSubmit={this.onSubmit} className="form form-publish">
             <label htmlFor="title">Titre de l'annonce</label>
             <input
